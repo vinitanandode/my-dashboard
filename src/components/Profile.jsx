@@ -13,7 +13,7 @@ export default function Profile() {
       <div className="title">
         <h2>Vinita</h2>
         <h5>
-          <HiOutlineLocationMarker /> New York, USA
+          <HiOutlineLocationMarker /> Nasik, India
         </h5>
       </div>
       <div className="info">

@@ -8,7 +8,7 @@ export default function Transfers() {
   const transactions = [
     {
       image: avatarImage,
-      name: "From Kishan Sheth",
+      name: "From Vinita Nandode",
       time: "Today, 16:36",
       amount: "+$50",
     },
