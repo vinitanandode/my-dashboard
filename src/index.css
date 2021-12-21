@@ -11,3 +11,18 @@ body {
   /* font-family: "Permanent Marker", cursive; */
   background-color: black;
 }
+
+::-webkit-scrollbar {
+  background-color: black;
+  width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffc107;
+}
+
+.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  right: 0 !important;
+}
