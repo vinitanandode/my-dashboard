@@ -1,15 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { BiSearch } from "react-icons/bi";
+import { useMsal } from "@azure/msal-react";
 
 export default function Navbar() {
+  const { accounts, instance } = useMsal();
+
   return (
     <Nav>
       <div className="title">
-        <h4>Hi Vinita Nandode</h4>
+        <h4>Hi {accounts[0]?.name}</h4>
         <h1>
           Welcome to <span>My Dashboard</span>
         </h1>
+        <button
+          onClick={() =>
+            instance.logoutRedirect({ postLogoutRedirectUri: "/" })
+          }
+        >
+          Logout
+        </button>
       </div>
       <div className="search">
         <BiSearch />
