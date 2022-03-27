@@ -31,9 +31,10 @@ export const msalConfig = {
     knownAuthorities: [b2cPolicies.authorityDomain],
     redirectUri: "http://localhost:3000", //window.location.protocol + "//" + window.location.host, //
     navigateToLoginRequestUrl: true,
+    postLogoutRedirectUri: "https://localhost:3000",
   },
   cache: {
-    cacheLocation: "sessionStorage",
+    cacheLocation: "localStorage",
     storeAuthStateInCookie: false,
   },
   system: {
