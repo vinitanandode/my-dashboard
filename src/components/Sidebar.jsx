@@ -10,10 +10,14 @@ import { FiLogOut } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
 import scrollreveal from "scrollreveal";
+import { useMsal } from "@azure/msal-react";
+
 export default function Sidebar() {
   const [currentLink, setCurrentLink] = useState(1);
   const [navbarState, setNavbarState] = useState(false);
   const html = document.querySelector("html");
+  const { accounts, instance } = useMsal();
+  const id_token_hint = "";
   html.addEventListener("click", () => setNavbarState(false));
 
   useEffect(() => {
@@ -121,7 +125,14 @@ export default function Sidebar() {
             </ul>
           </div>
         </div>
-        <div className="logout">
+        <div
+          className="logout"
+          onClick={() =>
+            instance.logoutRedirect({
+              postLogoutRedirectUri: "/",
+            })
+          }
+        >
           <a href="#">
             <FiLogOut />
             <span className="logout">Logout</span>

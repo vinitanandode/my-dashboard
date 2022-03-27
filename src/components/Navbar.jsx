@@ -13,17 +13,20 @@ export default function Navbar() {
         <h1>
           Welcome to <span>My Dashboard</span>
         </h1>
+      </div>
+      <div className="search">
+        <BiSearch />
+        <input type="text" placeholder="Search" />
+      </div>
+      <div className="logout">
         <button
+          className="logout"
           onClick={() =>
             instance.logoutRedirect({ postLogoutRedirectUri: "/" })
           }
         >
           Logout
         </button>
-      </div>
-      <div className="search">
-        <BiSearch />
-        <input type="text" placeholder="Search" />
       </div>
     </Nav>
   );
@@ -68,6 +71,7 @@ const Nav = styled.nav`
       }
     }
   }
+
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     flex-direction: column;
     .title {
